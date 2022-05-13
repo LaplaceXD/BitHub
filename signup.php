@@ -26,6 +26,7 @@
           $conn = connect_to_db();
           if(!$conn) {
             $error = "We apologize for the inconvenience. An unexpected error occured.";
+            goto errorForm;
           }
           
           $result = register_user(
@@ -40,7 +41,7 @@
 
           if(!$result) {
             $error = "Error: ".mysqli_error($conn);
-            goto end;
+            goto errorForm;
           }
 
           mysqli_close($conn);
@@ -50,7 +51,7 @@
           goto end;
         }
         
-
+        errorForm:
         render_registration_form($_POST["username"], $_POST["firstname"], $_POST["lastname"], $_POST["gender"], $_POST["dob"], $error);
         end:
       ?>
