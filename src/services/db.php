@@ -1,5 +1,5 @@
 <?php
-  function connect_to_db(): mysqli | false | null {
+  function connect_to_db() {
     $credentials = file(".htsecret", FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES);
     if(!file_exists(".htsecret")) return null;    
 

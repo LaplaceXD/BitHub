@@ -1,12 +1,12 @@
 <?php 
   function render_registration_form(
-    string $user = "",
-    string $fname = "",
-    string $lname = "",
-    string $gender = "",
-    string $dob = "",
-    string $err = ""
-  ): void {
+    $user = "",
+    $fname = "",
+    $lname = "",
+    $gender = "",
+    $dob = "",
+    $err = ""
+  ) {
     $err = $err = "" ? "" : '<p class="text-danger">'.$err.'</p>';
 
     echo '<form class="w-100 container" method="POST" style="max-width: 768px;">
@@ -58,7 +58,7 @@
       </form>';
   }
 
-  function render_login_form(string $user = "", string $err = ""): void {
+  function render_login_form($user = "", $err = "") {
     $err = $err = "" ? "" : '<p class="text-danger">'.$err.'</p>';
     
     echo '<form method="POST">
