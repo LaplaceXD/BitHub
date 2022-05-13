@@ -13,7 +13,7 @@
         $error = "";
         
         $min_age = 13;
-        $age_of_consent = date("Y-m-d", strtotime($_POST["dob"]."+ $min_age years"));
+        $age_of_consent = isset($_POST["dob"]) && date("Y-m-d", strtotime($_POST["dob"]."+ $min_age years"));
 
         if(array_any($fields, function ($field) { return !isset($_POST[$field]); })) {
           render_registration_form();
