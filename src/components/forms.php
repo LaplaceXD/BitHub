@@ -57,4 +57,21 @@
         <button type="submit" class="btn btn-primary w-100">Submit</button>
       </form>';
   }
+
+  function render_login_form(string $user = "", string $err = ""): void {
+    $err = $err = "" ? "" : '<p class="text-danger">'.$err.'</p>';
+    
+    echo '<form method="POST">
+      <div class="mb-3">
+        <label for="user" class="form-label">Username</label>
+        <input type="text" class="form-control" id="user" name="username" value="'.$user.'" required>
+      </div>
+      <div class="mb-3">
+        <label for="pass" class="form-label">Password</label>
+        <input type="password" class="form-control" id="pass" name="password" required>
+      </div>
+      '.$err.'
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </form>';
+  }
 ?>
