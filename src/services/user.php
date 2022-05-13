@@ -13,4 +13,9 @@
 
     return mysqli_query($conn, $sql);
   }
+  
+  function get_user(mysqli $conn, string $user): mysqli_result | bool {
+    $sql = "SELECT Username, Password FROM `user` WHERE Username = '".$user."'";
+    return mysqli_query($conn, $sql);
+  }
 ?>
