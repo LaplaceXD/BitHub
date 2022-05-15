@@ -19,7 +19,7 @@
           } else {
             $conn = connect_to_db();
             if(!$conn) {  
-              $error = "We apologize for the inconvenience. An unexpected error occured";
+              $error = "We apologize for the inconvenience. An unexpected error occured.";
               goto errorForm;
             }
 
