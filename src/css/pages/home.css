@@ -36,7 +36,7 @@
   border-radius: 12px;
 }
 
-.post + .post {
+.post {
   margin-top: 24px;
 }
 

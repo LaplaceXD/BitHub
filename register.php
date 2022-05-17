@@ -4,7 +4,6 @@
   <?php
     require_once("src/components/imports.php");
     if(isset($_SESSION["userID"])) {
-      header("Content-Type: text/html; charset=utf-8");
       header("Location:home.php");
     }
 

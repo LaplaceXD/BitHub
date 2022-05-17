@@ -15,4 +15,9 @@
     $sql = "SELECT ID, Username, Password FROM `user` WHERE Username = '".$user."'";
     return mysqli_query($conn, $sql);
   }
+
+  function get_post_user ($conn, $post_id) {
+    $sql = "SELECT UserID FROM Content WHERE $post_id = id;";
+    return mysqli_query($conn, $sql);
+  }
 ?>
