@@ -4,6 +4,7 @@
   
   include_once("src/services/db.php");
   include_once("src/services/user.php");
+  include_once("src/services/post.php");
   
   include_once("src/utils/array.php");
 ?>

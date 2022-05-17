@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <?php
@@ -55,6 +59,11 @@
         render_registration_form($_POST["username"], $_POST["firstname"], $_POST["lastname"], $_POST["gender"], $_POST["dob"], $error);
         end:
       ?>
+      <div class="row w-100 mb-3">
+        <div class="col-6"><p class="w-100 mt-2" style="max-width: 768px;">Already have an account? <a href="index.php">Log in!</a></p>  </div>
+        <div class="col-6"></div>
+      </div>
+      
     </section>
   </body>
 </html>
