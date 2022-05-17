@@ -27,8 +27,10 @@
               $msg = "Please fill up all the fields.";
             } elseif ($_POST["pass"] !== $_POST["confpass"]) {
               $msg = "Your passwords do not match.";
-            } elseif(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+            } elseif(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) && !test_input($_POST["email"])) {
               $msg = "Input a valid email.";
+            } elseif(!test_input($_POST["user"])) {
+              $msg = "Input a valid username."; 
             } else {
               $conn = connect_to_db();
               if(!$conn) {
@@ -39,11 +41,11 @@
               $result = register_user(
                 $conn,
                 test_input($_POST["user"]),
-                test_input($_POST["pass"]),
+                $_POST["pass"],
                 test_input($_POST["email"])
               );
               if(!$result) {
-                $error = "Error: ".mysqli_error($conn);
+                $error = mysqli_error($conn);
                 goto error;
               }
   
