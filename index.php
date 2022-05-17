@@ -48,7 +48,7 @@
               } 
               
               $user_details = mysqli_fetch_assoc($result);
-              if(!hash_equals($_POST["pass"], $user_details["Password"])) {
+              if(!password_verify($_POST["pass"], $user_details["Password"])) {
                 $msg = "Invalid User Credentials.";
                 goto error;
               }
@@ -58,7 +58,6 @@
               $_SESSION["userID"] = $user_details["ID"];
               $_SESSION["username"] = $user_details["Username"];
               
-              header("Content-Type: text/html; charset=utf-8");
               header("Location:home.php");
               goto end;
             }
