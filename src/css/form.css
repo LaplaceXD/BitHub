@@ -34,7 +34,7 @@
 
 .form__btn {
   background: var(--main-gradient);
-  color: var(--bg-color);
+  color: var(--white);
   margin-top: 8px;
   padding: 8px;
   font-size: 1em;
