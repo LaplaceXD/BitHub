@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <?php
@@ -48,6 +52,17 @@
           errorForm:
           render_login_form($_POST["username"], $error);
           end:
+
+          $conn = connect_to_db();
+          // NEEDS TO BE CHANGED TO SESSION VARIABLE UPON LOGIN
+          $username = "erwin";
+          $result = get_user_id($conn, $username)->fetch_array();
+          $user_id = intval($result[0]);
+          $_SESSION["userID"] = $user_id;
+          mysqli_close($conn);
+
+          header("location: home.php");
+          exit();
         ?>
         <p class="w-100 mt-2" style="max-width: 768px;">Don't have an account? <a href="signup.php">Sign up!</a></p>  
       </div>
