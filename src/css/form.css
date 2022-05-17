@@ -21,7 +21,7 @@
   transition: all 150ms ease;
 }
 
-.form__input:focus + .form__label, .form__field.filled + .form__label {
+.form__input:focus + .form__label, .form__input.filled + .form__label {
   background-color: var(--bg-color);
   font-size: 0.8em;
   top: -9px;
