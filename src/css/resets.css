@@ -11,3 +11,13 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+
+button {
+  outline: none;
+  border: none;
+  font-family: inherit;
+}
+
+button:hover {
+  cursor: pointer;
+}
