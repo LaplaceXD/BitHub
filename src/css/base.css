@@ -16,7 +16,7 @@
   --text-color: var(--off-white);
 }
 
-.white {
+.light {
   --bg-color: var(--white);
   --text-color: var(--black);
 }
@@ -35,4 +35,31 @@ body {
 
 main {
   flex: 1;
+}
+
+.theme__btn {
+  color: var(--text-color);
+  width: 25px;
+  background: none;
+  transition: transform 150ms ease;
+}
+
+.theme__btn:active {
+  transform: scale(1.05);
+}
+
+.light-icon {
+  display: block;
+}
+
+.dark-icon {
+  display: none;
+}
+
+body.light .light-icon {
+  display: none;
+}
+
+body.light .dark-icon {
+  display: block;
 }

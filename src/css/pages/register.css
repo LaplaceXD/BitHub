@@ -7,14 +7,23 @@
   overflow: hidden;
 }
 
+.reg__head {
+  align-self: center;
+  display: flex;
+  align-items: center; 
+}
+
 img {
   width: 50vw;
   object-fit: cover;
 }
 
+.theme {
+  margin-left: 16px;
+}  
+
 .logo {
   color: var(--primary-color);
-  align-self: center;
 }
 
 .reg__content {
