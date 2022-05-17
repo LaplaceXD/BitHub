@@ -44,7 +44,7 @@
   transition: transform 150ms ease;
 }
 
-.form__error {
+.form__msg {
   display: none;
   color: var(--title-text-color);
   margin-top: 8px;
