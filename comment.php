@@ -51,22 +51,21 @@
                             }
                         }
 
-                        $comment = get_content($conn, $params['id']);
+                        $comment = get_comment($conn, $params['id']);
 
                         if(!$comment) {
                             echo "Error: ".mysqli_error($conn);
                         } elseif($comment->num_rows === 0) {
-                            echo "<h2>No Post to show!</h2>";
+                            echo "<br><h2>No Comments to show!</h2>";
                         } else {
                             echo "<h1 class='text-primary text-center'>COMMENTS</h1>";
                             while($row = mysqli_fetch_assoc($comment)) {
-                                $id = $row["ContentID"];
+                                //var_dump($row);
                                 echo 
                                 "<div class='mb-3' style='border:1px solid black'>
                                     <h5>".$row["Username"]."</h5>
                                     <p>".$row["Content"]."</p>
                                     <p style='font-size:10px;'>".$row["Likes"]." Likes</p>
-                                    <p style='font-size:9px;'>".$row["DatePosted"]."</p>
                                 </div>";
                             }
                         }
