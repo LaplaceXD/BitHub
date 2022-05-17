@@ -48,8 +48,7 @@
               } 
               
               $user_details = mysqli_fetch_assoc($result);
-              print_r($user_details);
-              if(hash_equals($_POST["pass"], $user_details["Password"])) {
+              if(!hash_equals($_POST["pass"], $user_details["Password"])) {
                 $msg = "Invalid User Credentials.";
                 goto error;
               }
