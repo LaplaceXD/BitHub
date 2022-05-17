@@ -4,7 +4,7 @@
   --main-font: 'Poppins', sans-serif;
   --white: hsl(360, 100%, 100%);
   --black: hsl(261, 100%, 4%);
-  --text-color: hsla(0, 0%, 100%, 0.502);
+  --off-white: hsla(0, 0%, 100%, 0.8);
   --shadow-color: hsl(240, 97%, 26%);
   --accent-color: hsl(345, 87%, 76%);
   --primary-color: hsl(271, 70%, 60%);
@@ -13,6 +13,12 @@
   --main-gradient-reversed: linear-gradient(135deg, var(--primary-color) 0%, var(--title-text-color) 100%);
   
   --bg-color: var(--black);
+  --text-color: var(--off-white);
+}
+
+.white {
+  --bg-color: var(--white);
+  --text-color: var(--black);
 }
 
 body {
@@ -21,9 +27,10 @@ body {
   background-position-x: center;
   font-family: var(--main-font);
   min-height: 100vh;
-  color: var(--white);
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
+  transition: color 150ms ease, background 150ms ease;
 }
 
 main {
