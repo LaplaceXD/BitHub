@@ -3,7 +3,7 @@
 :root {
   --main-font: 'Poppins', sans-serif;
   --white: hsl(360, 100%, 100%);
-  --black: hsl(261, 100%, 4%);
+  --black: #070014;
   --off-white: hsla(0, 0%, 100%, 0.8);
   --shadow-color: hsl(240, 97%, 26%);
   --accent-color: hsl(345, 87%, 76%);
