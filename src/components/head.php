@@ -27,6 +27,7 @@
       <!--JS-->
       <script src="src/js/Toggle.js"></script>      
       <script src="src/js/toast.js"></script>      
+      <script src="src/js/loader.js"></script>      
     </head>';
   }
 ?>
