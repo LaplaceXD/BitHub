@@ -21,6 +21,7 @@
       <!--CSS-->
       <link href="src/css/resets.css" rel="stylesheet" type="text/css" />
       <link href="src/css/base.css" rel="stylesheet" type="text/css" />
+      <link href="src/css/header.css" rel="stylesheet" type="text/css" />
       
       <!--SPECIFIC CSS-->
       '.$specific_css.'

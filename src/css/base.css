@@ -14,11 +14,13 @@
   
   --bg-color: var(--black);
   --text-color: var(--off-white);
+  --box-shadow-color: var(--shadow-color);
 }
 
 .light {
   --bg-color: var(--white);
   --text-color: var(--black);
+  --box-shadow-color: var(--off-white);
 }
 
 body {
