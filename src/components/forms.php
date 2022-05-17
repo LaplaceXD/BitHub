@@ -7,9 +7,9 @@
     if($value != "") $value = 'value="'.$value.'"';
 
     echo '<div class="form__field">
-        <input class="form__input" type="text" id="'.$name.'" name="'.$name.'" '.$value.'required>
-        <label class="form__label" for="'.$name.'">'.$label.'</label>
-      </div>';
+            <input class="form__input" type="text" id="'.$name.'" name="'.$name.'" '.$value.'required>
+            <label class="form__label" for="'.$name.'">'.$label.'</label>
+          </div>';
   }
 
   function render_registration_form(
