@@ -45,6 +45,7 @@
 }
 
 .form__error {
+  display: none;
   color: var(--title-text-color);
   margin-top: 8px;
 }
