@@ -41,6 +41,7 @@
                                 <div class='mb-3' style='border:1px solid black'>
                                     <h5>".$row["Username"]."</h5>
                                     <p>".$row["Content"]."</p>
+                                    <p style='font-size:10px;'>".$row["Likes"]." Likes</p>
                                     <p style='font-size:9px;'>".$row["DatePosted"]."</p>
                                 </div>
                                 <div style='border:1px solid black; width:fit-content'>
@@ -64,6 +65,7 @@
                                 "<div class='mb-3' style='border:1px solid black'>
                                     <h5>".$row["Username"]."</h5>
                                     <p>".$row["Content"]."</p>
+                                    <p style='font-size:10px;'>".$row["Likes"]." Likes</p>
                                     <p style='font-size:9px;'>".$row["DatePosted"]."</p>
                                 </div>";
                             }
