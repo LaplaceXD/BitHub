@@ -63,3 +63,7 @@ body.light .light-icon {
 body.light .dark-icon {
   display: block;
 }
+
+a {
+  color: var(--primary-color);
+}

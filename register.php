@@ -59,6 +59,7 @@
             render_registration_form();
           }
         ?>
+        <p>Already have an account? <a href="index.php">Login.</a></p>
       </section>
     </div>
   </body>
