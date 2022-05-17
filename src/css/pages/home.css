@@ -1,5 +1,6 @@
 .posts {
   margin: auto;
+  margin-top: 12px;
 }
 
 .user {
@@ -33,6 +34,10 @@
   border: 1px solid var(--text-color);
   padding: 16px;
   border-radius: 12px;
+}
+
+.post + .post {
+  margin-top: 24px;
 }
 
 .post__content {
@@ -71,4 +76,29 @@
 
 .btn__container > p {
   margin-left: 8px;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 650px;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.post-form > textarea {
+  background: none;
+  resize: none;
+  color: var(--text-color);
+  font-family: var(--main-font);
+  padding: 8px;
+  font-size: 1em;
+  outline: 1px solid var(--text-color);
+}
+
+.post-form > button {
+  margin-top: 0;
+  border-radius: 0;
+  border-end-end-radius: 12px;
+  border-end-start-radius: 12px;
 }

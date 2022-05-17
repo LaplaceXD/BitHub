@@ -7,6 +7,7 @@
   
   include_once("src/services/db.php");
   include_once("src/services/user.php");
+  include_once("src/services/content.php");
   
   include_once("src/utils/array.php");
   include_once("src/utils/input.php");

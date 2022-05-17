@@ -69,3 +69,9 @@ body.light .dark-icon {
 a {
   color: var(--primary-color);
 }
+
+.msg {
+  display: none;
+  color: var(--title-text-color);
+  margin-top: 8px;
+}

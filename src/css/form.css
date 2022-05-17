@@ -44,11 +44,7 @@
   transition: transform 150ms ease;
 }
 
-.form__msg {
-  display: none;
-  color: var(--title-text-color);
-  margin-top: 8px;
-}
+
 
 .form__btn:active {
   transform: translateY(4px);

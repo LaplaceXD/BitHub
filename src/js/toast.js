@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const msg = document.querySelector(".form__msg");
+  const msg = document.querySelector(".msg");
   if(msg) {
     const [type, content] = msg.textContent.split(":");
     let style;
