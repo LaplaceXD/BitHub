@@ -26,6 +26,7 @@
       '.$specific_css.'
       <!--JS-->
       <script src="src/js/Toggle.js"></script>      
+      <script src="src/js/toast.js"></script>      
     </head>';
   }
 ?>
