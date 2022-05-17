@@ -73,7 +73,7 @@
         <p>Don&apos;t have an account? <a href="register.php">Sign up.</a></p>
       </section>
       <div class="login__bg">
-        <img src="src/img/login_bg.jpg" />
+        <img src="src/img/login_bg.jpg" alt="Login Background" />
       </div>
     </div>
   </body>

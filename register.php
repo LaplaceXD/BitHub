@@ -14,7 +14,7 @@
   <body>
     <div class="reg">
       <div class="reg__img">
-        <img src="src/img/register_bg.jpg" />
+        <img src="src/img/register_bg.jpg" alt="Register Background"/>
       </div>
       <section class="reg__content">
         <div class="reg__head">
