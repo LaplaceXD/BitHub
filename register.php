@@ -48,7 +48,9 @@
                 $error = mysqli_error($conn);
                 goto error;
               }
-  
+              
+              mysqli_close($conn);
+              
               $msg = "Successfully registered!";
               render_registration_form("", "","success:".$msg);
               goto end;

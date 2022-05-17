@@ -1,56 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <?php
     require_once("src/components/imports.php");
-    render_head();
+    session_start();
+
+    render_head(array("form", "pages/login"));
+    echo "\n";
   ?>
   <body>
-    <section class="container mt-5">
-      <h1 class="text-primary text-center">Welcome to BitHub!</h1>
-      <h2 class="text-center">Login</h2>
-      <div class="w-100 container" style="max-width: 768px">
-        <?php 
-          $fields = array("username", "password");
-          $error = "";
-          
-          if(array_any($fields, function ($field) { return !isset($_POST[$field]); })) {
-            render_login_form();
-            goto end;
+    <div class="login">
+      <section class="login__content">
+        <div class="login__head">
+          <a href="index.php" class="logo" /><?php include "src/img/icons/Bithub.svg"; ?></a>
+          <?php render_theme_toggle(); ?>
+        </div>
+        <h1 class="login__title">Register</h1>
+        <?php
+          if($_SERVER["REQUEST_METHOD"] == "POST") {
+            $fields = array("user", "pass");
+            $msg = "";
+  
+            if(array_any($fields, function ($field) { return !isset($_POST[$field]); })) {
+              $msg = "Please fill up all the fields.";
+            } elseif(!test_input($_POST["user"])) {
+              $msg = "Invalid username."; 
+            } else {
+              $conn = connect_to_db();
+              if(!$conn) {
+                $msg = "We apologize for the inconvenience. An unexpected error occured.";
+                goto error;
+              }
+  
+              $result = get_user(
+                $conn,
+                test_input($_POST["user"]),
+              );
+              if(!$result) {
+                $msg = mysqli_error($conn);
+                goto error;
+              } elseif($result->num_rows === 0) {
+                $msg = "Invalid User Credentials.";
+                goto error;
+              } 
+              
+              $user_details = mysqli_fetch_assoc($result);
+              print_r($user_details);
+              if(hash_equals($_POST["pass"], $user_details["Password"])) {
+                $msg = "Invalid User Credentials.";
+                goto error;
+              }
+
+              mysqli_close($conn);
+            
+              $_SESSION["userID"] = $user_details["ID"];
+              $_SESSION["username"] = $user_details["Username"];
+              
+              header("Content-Type: text/html; charset=utf-8");
+              header("Location:home.php");
+              goto end;
+            }
+  
+            error:
+            render_login_form($_POST["user"], "error:".$msg); 
+            end:  
           } else {
-            $conn = connect_to_db();
-            if(!$conn) {  
-              $error = "We apologize for the inconvenience. An unexpected error occured.";
-              goto errorForm;
-            }
-
-            $result = get_user($conn, $_POST["username"]);
-            
-            if(!$result) {
-              $error = "Error: ".mysqli_error($conn);
-              goto errorForm;
-            } elseif($result->num_rows === 0) {
-              $error = "Invalid user credentails.";
-              goto errorForm;
-            }
-
-            mysqli_close($conn);
-            $user = mysqli_fetch_assoc($result);
-            
-            if(hash_equals($_POST["password"], $user["Password"])) {
-              $error = "Invalid user credentials.";
-              goto errorForm;
-            }
-            
-            echo "Successful Login.";
-            goto end;
+            render_login_form();
           }
-
-          errorForm:
-          render_login_form($_POST["username"], $error);
-          end:
         ?>
-        <p class="w-100 mt-2" style="max-width: 768px;">Don't have an account? <a href="signup.php">Sign up!</a></p>  
+        <p>Don&apos;t have an account? <a href="register.php">Sign up.</a></p>
+      </section>
+      <div class="login__bg">
+        <img src="src/img/login_bg.jpg" />
       </div>
-    </section>
+    </div>
   </body>
 </html>

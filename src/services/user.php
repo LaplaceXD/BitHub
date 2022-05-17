@@ -12,7 +12,7 @@
   }
   
   function get_user($conn, $user) {
-    $sql = "SELECT Username, Password FROM `user` WHERE Username = '".$user."'";
+    $sql = "SELECT ID, Username, Password FROM `user` WHERE Username = '".$user."'";
     return mysqli_query($conn, $sql);
   }
 ?>
