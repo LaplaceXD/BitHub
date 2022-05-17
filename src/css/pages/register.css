@@ -1,5 +1,6 @@
 .reg {
   display: flex;
+  margin-top: 25vh;
 }
 
 .reg__img {
@@ -16,6 +17,7 @@
 img {
   width: 50vw;
   object-fit: cover;
+  display: none;
 }
 
 .theme {
@@ -28,7 +30,8 @@ img {
 
 .reg__content {
   margin: auto;
-  width: 500px;
+  width: 512px;
+  padding: 0 12px;
   display: flex;
   flex-direction: column;
 }
@@ -41,4 +44,14 @@ img {
 
 .form__field + .form__field {
   margin-top: 16px;
+}
+
+@media screen and (min-width: 1280px) {
+  img {
+    display: block;
+  }
+
+  .reg {
+    margin-top: 0;
+  }
 }
