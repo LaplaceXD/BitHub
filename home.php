@@ -1,23 +1,3 @@
-<?php
-    include "post.php";
-
-    $sql = "SELECT * FROM 'Content' ORDER BY 'id' DESC LIMIT 20";
-    $res = mysqli_query($sql);
-                    
-    if($res && mysqli_num_rows($res) > 0) {
-        $row = $result->fetch_array(MYSQLI_ASSOC);
-                
-        // Retrieve individual field value
-        $user = $row["UserID"];
-        $post = $row["Content"];
-        $like = $row["Likes"];
-    } else {
-        echo "
-            <div class="post">
-            <h1>No Post Found</h1>
-            </div>"
-    }
-?>
 <!DOCTYPE html>
 <html>
     <?php
@@ -27,15 +7,15 @@
     <body>
         <section>
            <div class="content">
-               <div class="user">
-                    <p><?php echo $row["UserID"]; ?></p>
-               </div>
-               <div class="content">
-                    <p><?php echo post($row["Content"]); ?></p>
-               </div>
-               <div class="likes">
-                    <p><?php echo $row["Likes"]; ?></p>
-               </div>
+               <h1>Posts</h1>
+               <?php
+                    $conn = connect_to_db();
+                    if(!$conn) {  
+                      echo "We apologize for the inconvenience. An unexpected error occured.";
+                    } else {
+                        $result = post($conn);
+                    }
+               ?>
            </div>
         </section>
     </body>

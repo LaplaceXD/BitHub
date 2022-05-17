@@ -1,19 +1,7 @@
 <?php
+   function post($conn) {
+       $sql = "SELECT Content FROM Content";
 
-    $conn = connect_to_db();
-    if (!$conn) {
-      die("Connection failed: " . mysqli_connect_error());
-    }
-    
-    function post($post) {
-        $post = explode($post, "\n");
-        $buffer = ' ';
-
-        foreach($post as $p) {
-            $buffer .= '<p>'.$p.'</p>';
-        }
-
-        return $buffer;
-    }
-
+       return mysqli_query($conn, $sql);
+   }
 ?>
