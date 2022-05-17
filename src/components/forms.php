@@ -30,7 +30,7 @@
       echo "\n";
       render_field($name, $content[0], $content[1]);
     }
-    echo $err = $err = "" ? "" : "\n".'<p class="form__error">'.$err.'</p>';
+    echo $err = $err == "" ? "" : "\n".'<p class="form__error">'.$err.'</p>';
     echo "\n".render_submit_btn("Register");
     echo "\n</form>";
   }

@@ -14,6 +14,10 @@
 
       <title>'.$title.'</title>
 
+      <!--VENDOR-->
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
       <!--CSS-->
       <link href="src/css/resets.css" rel="stylesheet" type="text/css" />
       <link href="src/css/base.css" rel="stylesheet" type="text/css" />
@@ -21,7 +25,7 @@
       <!--SPECIFIC CSS-->
       '.$specific_css.'
       <!--JS-->
-      <script src="src/js/Toggle.js"></script>
+      <script src="src/js/Toggle.js"></script>      
     </head>';
   }
 ?>
