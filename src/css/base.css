@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap');
+
+:root {
+  --main-font: 'Poppins', sans-serif;
+  --white: hsl(360, 100%, 100%);
+  --black: hsl(261, 100%, 4%);
+  --text-color: hsla(0, 0%, 100%, 0.502);
+  --shadow-color: hsl(240, 97%, 26%);
+  --accent-color: hsl(345, 87%, 76%);
+  --primary-color: hsl(271, 70%, 60%);
+  --title-text-color: hsl(290, 100%, 50%);
+  --main-gradient: linear-gradient(135deg, var(--title-text-color) 0%, var(--primary-color) 100%);
+  --main-gradient-reversed: linear-gradient(135deg, var(--primary-color) 0%, var(--title-text-color) 100%);
+  
+  --bg-color: var(--black);
+}
+
+body {
+  position: relative;
+  background: var(--bg-color);
+  background-position-x: center;
+  font-family: var(--main-font);
+  min-height: 100vh;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
