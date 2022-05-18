@@ -43,4 +43,10 @@
     $delete = "DELETE FROM content WHERE $post_id = id;";
     return mysqli_query($conn, $delete);
   }
+
+  function update_content($conn, $content, $post_id) {
+    $sql = "UPDATE `Content` SET Content = '$content' WHERE ID = $post_id";
+
+    return mysqli_query($conn, $sql);
+  }
 ?>

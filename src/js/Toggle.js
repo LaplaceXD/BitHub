@@ -3,7 +3,7 @@ class Toggle {
     this.toggler = document.querySelector(toggleSelector);
     this.target = document.querySelector(targetSelector);
     this.classList = classList;
-    console.log("Yep!");
+    
     this.toggle = this.toggle.bind(this);
   }
 
