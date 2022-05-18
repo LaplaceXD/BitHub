@@ -3,19 +3,21 @@
     $conn,
     $user,
     $pass,
-    $fname,
-    $lname,
-    $gender,
-    $dob
+    $email
   ) {
-    $sql = "INSERT INTO `user` (`Username`, `Password`, `FirstName`, `LastName`, `BirthDate`, `Gender`) 
-    VALUES ('".$user."', '".password_hash($pass, PASSWORD_DEFAULT)."', '".$fname."', '".$lname."', '".$dob."', '".$gender."')";
+    $sql = "INSERT INTO `User` (`Username`, `Password`, `Email`) 
+    VALUES ('".$user."', '".password_hash($pass, PASSWORD_DEFAULT)."', '".$email."')";
 
     return mysqli_query($conn, $sql);
   }
   
   function get_user($conn, $user) {
-    $sql = "SELECT Username, Password FROM `user` WHERE Username = '".$user."'";
+    $sql = "SELECT ID, Username, Password FROM `User` WHERE Username = '".$user."'";
+    return mysqli_query($conn, $sql);
+  }
+
+  function get_post_user ($conn, $post_id) {
+    $sql = "SELECT UserID FROM Content WHERE $post_id = id;";
     return mysqli_query($conn, $sql);
   }
 ?>

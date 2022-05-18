@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap');
+
+:root {
+  --main-font: 'Poppins', sans-serif;
+  --white: hsl(360, 100%, 100%);
+  --black: #070014;
+  --off-white: hsla(0, 0%, 100%, 0.8);
+  --shadow-color: hsl(240, 97%, 26%);
+  --accent-color: hsl(345, 87%, 76%);
+  --primary-color: hsl(271, 70%, 60%);
+  --title-text-color: hsl(290, 100%, 50%);
+  --main-gradient: linear-gradient(135deg, var(--title-text-color) 0%, var(--primary-color) 100%);
+  --main-gradient-reversed: linear-gradient(135deg, var(--primary-color) 0%, var(--title-text-color) 100%);
+  
+  --bg-color: var(--black);
+  --text-color: var(--off-white);
+  --box-shadow-color: var(--shadow-color);
+}
+
+.light {
+  --bg-color: var(--white);
+  --text-color: var(--black);
+  --box-shadow-color: var(--off-white);
+}
+
+body {
+  position: relative;
+  background: var(--bg-color);
+  background-position-x: center;
+  font-family: var(--main-font);
+  min-height: 100vh;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  transition: color 150ms ease, background 150ms ease;
+}
+
+main {
+  flex: 1;
+}
+
+.theme__btn {
+  color: var(--text-color);
+  width: 25px;
+  background: none;
+  transition: transform 150ms ease;
+}
+
+.theme__btn:active {
+  transform: scale(1.05);
+}
+
+.light-icon {
+  display: block;
+}
+
+.dark-icon {
+  display: none;
+}
+
+body.light .light-icon {
+  display: none;
+}
+
+body.light .dark-icon {
+  display: block;
+}
+
+a {
+  color: var(--primary-color);
+}
+
+.msg {
+  display: none;
+  color: var(--title-text-color);
+  margin-top: 8px;
+}
