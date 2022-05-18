@@ -24,6 +24,7 @@
   <body>
     <?php render_header(); ?>
     <main class="posts">
+      <h1>Hi, <?php echo $_SESSION["username"];?></h1>
       <?php
         $conn = connect_to_db();
         if(!$conn) {  
@@ -31,7 +32,7 @@
           goto end;
         }
 
-        $sql = "SELECT Content FROM content WHERE ID = $post_id";
+        $sql = "SELECT Content FROM Content WHERE ID = $post_id";
         $result = mysqli_query($conn, $sql);
         if(!$result) {
           $msg = "error:".mysqli_error($conn);

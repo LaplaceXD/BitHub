@@ -39,10 +39,9 @@
         </div>
         <p class="post__content">'.$post_content.'</p> 
         <div class="post__btns">
-          <a href="comment.php?id='.$post_id.'" class="post__btn">'.$comment_icon.'</a>
           <a href="update.php?id='.$post_id.'" class="post__btn">'.$update_icon.'</a>
           <div class="btn__container '.($liked ? "active" : "").'">
-            <button id="likes" class="post__btn">'.$likes_icon.'</button>  
+            <button class="post__btn">'.$likes_icon.'</button>  
             <p>'.$likes.'</p>
           </div>
           <a href="delete.php?id='.$post_id.'" class="post__btn">'.$delete_icon.'</a>  

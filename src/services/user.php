@@ -5,14 +5,14 @@
     $pass,
     $email
   ) {
-    $sql = "INSERT INTO `user` (`Username`, `Password`, `Email`) 
+    $sql = "INSERT INTO `User` (`Username`, `Password`, `Email`) 
     VALUES ('".$user."', '".password_hash($pass, PASSWORD_DEFAULT)."', '".$email."')";
 
     return mysqli_query($conn, $sql);
   }
   
   function get_user($conn, $user) {
-    $sql = "SELECT ID, Username, Password FROM `user` WHERE Username = '".$user."'";
+    $sql = "SELECT ID, Username, Password FROM `User` WHERE Username = '".$user."'";
     return mysqli_query($conn, $sql);
   }
 

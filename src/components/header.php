@@ -9,7 +9,7 @@
         <a href="index.php" class="logo">'.$logo.'</a>';
     render_theme_toggle();
     echo '</div>
-      <button onclick="location.href = \'logout.php\'"class="logout">Logout</button>
+      <button onclick="location.href = \'logout.php\'" class="logout">Logout</button>
     </header>';
   }
 ?>

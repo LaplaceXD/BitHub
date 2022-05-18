@@ -40,7 +40,7 @@
   }
 
   function delete_content($conn, $post_id) {
-    $delete = "DELETE FROM content WHERE $post_id = id;";
+    $delete = "DELETE FROM `Content` WHERE $post_id = id;";
     return mysqli_query($conn, $delete);
   }
 

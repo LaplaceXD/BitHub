@@ -13,6 +13,7 @@
   <body>
     <?php render_header(); ?>
     <main class="posts">
+      <h1>Hi, <?php echo $_SESSION["username"];?></h1>
       <?php
         render_post_form();
         if(isset($_SESSION["msg"])) {
@@ -55,7 +56,7 @@
                 $id,
                 $row["DatePosted"],
                 $row["Content"],
-                $row["Likes"],
+                $row["Likes"]
               );
             }
           }

@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const fields = document.querySelectorAll(".form__input");
   if(fields) {
     for(const field of fields) {
-      console.log(field);
       if(field.value) {
         field.classList.add("filled");
       }

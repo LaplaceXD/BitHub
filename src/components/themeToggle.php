@@ -9,8 +9,8 @@
     $dark_icon = ob_get_clean();
 
     echo '<button class="theme theme__btn">
-            <div class="light-icon">'.$light_icon.'</div>
-            <div class="dark-icon">'.$dark_icon.'</div>
+            <span class="light-icon">'.$light_icon.'</span>
+            <span class="dark-icon">'.$dark_icon.'</span>
           </button>';
   }
 ?>

@@ -17,7 +17,7 @@
       </div>
       <section class="reg__content">
         <div class="reg__head">
-          <a href="index.php" class="logo" /><?php include "src/img/icons/Bithub.svg"; ?></a>
+          <a href="index.php" class="logo"><?php include "src/img/icons/Bithub.svg"; ?></a>
           <?php render_theme_toggle(); ?>
         </div>
         <h1 class="reg__title">Register</h1>

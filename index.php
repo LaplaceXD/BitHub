@@ -14,7 +14,7 @@
     <div class="login">
       <section class="login__content">
         <div class="login__head">
-          <a href="index.php" class="logo" /><?php include "src/img/icons/Bithub.svg"; ?></a>
+          <a href="index.php" class="logo"><?php include "src/img/icons/Bithub.svg"; ?></a>
           <?php render_theme_toggle(); ?>
         </div>
         <h1 class="login__title">Register</h1>
@@ -34,10 +34,7 @@
                 goto error;
               }
   
-              $result = get_user(
-                $conn,
-                test_input($_POST["user"]),
-              );
+              $result = get_user($conn, test_input($_POST["user"]));
               if(!$result) {
                 $msg = mysqli_error($conn);
                 goto error;
@@ -57,7 +54,11 @@
               $_SESSION["userID"] = $user_details["ID"];
               $_SESSION["username"] = $user_details["Username"];
               
-              header("Location:home.php");
+              if (headers_sent()) {
+                echo("<script>location.href = 'home.php';</script>");
+              } else {
+                header("Location:home.php");
+              }
               goto end;
             }
   
